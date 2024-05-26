@@ -23,4 +23,23 @@ csv_file: Путь к CSV-файлу.
 --output_mode: Режим вывода: single для одного файла JSON, multiple для отдельных файлов JSON.
 ```
 
-python main.py test_data/example.csv --delimiter ',' --output_mode single
+python csv_to_json.py test_data/example.csv --delimiter ',' --output_mode single
+#Тесты функций преобразования:
+
+```
+test_transform_header проверяет правильность преобразования заголовков CSV в ключи JSON.
+test_format_date проверяет правильность преобразования даты.
+test_set_nested_value проверяет установку вложенных значений в JSON-объекте.
+```
+
+#Тесты основной функции:
+
+```
+test_csv_to_json_single проверяет преобразование данных из CSV в один JSON-файл.
+test_csv_to_json_multiple проверяет преобразование данных из CSV в несколько JSON-файлов.
+```
+
+```
+python test_csv_to_json.py
+
+```
