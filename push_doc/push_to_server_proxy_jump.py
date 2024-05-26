@@ -33,13 +33,23 @@ def open_ssh_via_proxy(proxy_host, proxy_port, proxy_username, proxy_password,
 
         # Выполняем команды по очереди
         for command in commands:
-            shell_channel.send(command + '\n')
-            time.sleep(1)  # Ждем завершения выполнения команды
+            attempts = 3  # Количество попыток выполнения команды
+            while attempts > 0:
+                try:
+                    # Отправка команды с символом новой строки (Enter)
+                    shell_channel.send(command + '\n')
+                    time.sleep(1)  # Ждем выполнения команды
 
-            # Считываем и выводим результат выполнения команды
-            while shell_channel.recv_ready():
-                output = shell_channel.recv(65535).decode('utf-8')
-                print(output)
+                    # Считываем и выводим результат выполнения команды
+                    while shell_channel.recv_ready():
+                        output = shell_channel.recv(65535).decode('utf-8')
+                        print(output)
+                    break  # Если команда выполнена успешно, выходим из цикла попыток
+                except Exception as e:
+                    print(f"Ошибка при выполнении команды: {e}")
+                    attempts -= 1  # Уменьшаем количество оставшихся попыток
+                    if attempts == 0:
+                        print(f"Не удалось выполнить команду: {command}")
 
         # Закрываем консоль и соединение
         shell_channel.close()

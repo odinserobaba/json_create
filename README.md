@@ -44,3 +44,54 @@ test_csv_to_json_multiple проверяет преобразование дан
 python test_csv_to_json.py
 
 ```
+
+# Push Doc
+
+# push_to_server_proxy_jump
+
+# отправка по ssh с proxy jump
+
+```
+# Данные для подключения к промежуточному серверу (Proxy Server)
+proxy_host = "proxy.example.com"
+proxy_port = 22
+proxy_username = "proxy_user"
+proxy_password = "proxy_password"
+
+# Данные для подключения к конечному серверу (Target Server)
+target_host = "target.example.com"
+target_port = 22
+target_username = "target_user"
+target_password = "target_password"
+
+# Команды, которые необходимо выполнить на конечном сервере
+commands = [
+    "echo Hello, World!",
+    "ls -la",
+    "uname -a"
+]
+```
+
+# Вызываем функцию open_ssh_via_proxy с использованием ProxyJump
+
+```
+open_ssh_via_proxy(proxy_host, proxy_port, proxy_username, proxy_password,
+                   target_host, target_port, target_username, target_password, commands)
+# push_to_server
+# отправка по ssh
+# Данные для подключения к конечному серверу (Target Server)
+host = "target.example.com"
+port = 22
+username = "target_user"
+password = "target_password"
+
+# Команды, которые необходимо выполнить на конечном сервере
+commands = [
+    "echo Hello, World!",
+    "ls -la",
+    "uname -a"
+]
+
+# Вызываем функцию open_ssh_connection без использования ProxyJump
+open_ssh_connection(host, port, username, password, commands)
+```

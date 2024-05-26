@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "Alice",
+        "Age": 30,
+        "City": "New York",
+        "Phone": "123-456-7890",
+        "Email": "alice@example.com",
+        "DateOfBirth": "1993-01-15"
+    },
+    {
+        "Name": "Bob",
+        "Age": 25,
+        "City": "Los Angeles",
+        "Phone": "987-654-3210",
+        "Email": "bob@example.com",
+        "DateOfBirth": "1998-05-23"
+    },
+    {
+        "Name": "Charlie",
+        "Age": 35,
+        "City": "Chicago",
+        "Phone": "555-555-5555",
+        "Email": "u9G5h@example.com",
+        "DateOfBirth": "1988-10-10"
+    }
+]
