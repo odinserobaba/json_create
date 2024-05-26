@@ -1,0 +1,10 @@
+{
+    "name": "Bob",
+    "age": 25,
+    "city": "Los Angeles",
+    "data": {
+        "phone": "987-654-3210",
+        "email": "bob@example.com"
+    },
+    "date_of_birth": "23-05-1998"
+}
